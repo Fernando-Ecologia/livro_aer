@@ -50,7 +50,7 @@ tema_livro <- theme(panel.border = element_rect(colour = "black",
 
 ::: {.alert .alert-info}
 <strong> 📝 Importante </strong>\
-Estatísticas frequentistas como as que serão abordadas neste capítulo são baseadas em testes estatísticos (e.g. F, t, 𝛘^2^, etc...), que são resultados númericos do teste, e um valor de probabilidade (valor de P) que é associado com o teste estatístico [@gotelli_ellison2013]. **O valor de P** mede a probabilidade que os valores observados ou mais extremos seriam encontrados caso a hipótese nula seja verdadeira (veja \@{cap3}). Ao longo do livro usaremos o critério convencional de rejeitar a hipótese nula quando P \< 0.05. Contudo, sugerimos a leitura destes artigos [@white2013; @barber2014; @burnham2014; @murtaugh2014; @halsey2019a] que discutemas limitações e problemas associados ao valor de P .
+Estatísticas frequentistas como as que serão abordadas neste capítulo são baseadas em testes estatísticos (e.g. F, t, 𝛘^2^, etc...), que são resultados númericos do teste, e um valor de probabilidade (valor de P) que é associado com o teste estatístico [@gotelli_primer_2012]. **O valor de P** mede a probabilidade que os valores observados ou mais extremos seriam encontrados caso a hipótese nula seja verdadeira (veja \@{cap3}). Ao longo do livro usaremos o critério convencional de rejeitar a hipótese nula quando P \< 0.05. Contudo, sugerimos a leitura destes artigos [@white2013; @barber2014; @burnham2014; @murtaugh2014; @halsey2019a] que discutemas limitações e problemas associados ao valor de P .
 :::
 
 ## Teste T (de Student) para duas amostras independentes
@@ -71,12 +71,12 @@ Onde:
 >
 > -   As amostras devem ser independentes;
 > -   As unidades amostrais são selecionadas aleatoriamente;
-> -   Distribuição normal (gaussiana) dos resíduos. **Observação:** Zar [-@zar2010] indica que o Test T é robusto mesmo com moderada violação da normalidade, principalmente se o tamanho amostral for alto.
+> -   Distribuição normal (gaussiana) dos resíduos. **Observação:** Zar [-@zar_biostatistical_2010] indica que o Test T é robusto mesmo com moderada violação da normalidade, principalmente se o tamanho amostral for alto.
 > -   Homogeneidade da variância. **Observação:** Caso as variâncias não sejam homogêneas, isso deve ser informado na linha de comando, pois o denominador da fórmula acima será corrigido.
 
 > #### Avaliação das premissas:
 >
-> Uma das maneiras de avaliarmos as premissas de normalidade e homogeneidade da variância relacionadas às análises do teste T, ANOVA e regressões lineares simples e múltiplas é o uso da inspeção gráfica da distribuição dos resíduos (Figura 1) [@zuur2009]. A homegeneidade da variância utiliza um gráfico dos resíduos pelos valores preditos (Figura 1A). A distribuição dos resíduos será homogênea se não observarmos nenhum padrão na distribuição dos pontos (i.e. forma em V, U ou funil). A normalidade dos resíduos utiliza um gráfico de quantis-quantis (QQ-plots). A distribuição dos resíduos será normal se os pontos estiverem próximos à reta (Figure 1B).
+> Uma das maneiras de avaliarmos as premissas de normalidade e homogeneidade da variância relacionadas às análises do teste T, ANOVA e regressões lineares simples e múltiplas é o uso da inspeção gráfica da distribuição dos resíduos (Figura 1) [@zuur_protocol_2009]. A homegeneidade da variância utiliza um gráfico dos resíduos pelos valores preditos (Figura 1A). A distribuição dos resíduos será homogênea se não observarmos nenhum padrão na distribuição dos pontos (i.e. forma em V, U ou funil). A normalidade dos resíduos utiliza um gráfico de quantis-quantis (QQ-plots). A distribuição dos resíduos será normal se os pontos estiverem próximos à reta (Figure 1B).
 
 ![Inspeção gráfica da homogeneidade da variância (A) e normalidade (B) dos resíduos. Os símbolos verdes indicam que os gráficos em que os resíduos apresentam distribuição homogênea e normal, enquanto os símbolos vermelhos indicam os gráficos em que os resíduos violam as premissas do teste.](QQ-plot.jpg)
 
@@ -362,7 +362,7 @@ Os resultados mostram que as localidades após as queimadas apresentam em média
 
 ## Correlação de Pearson
 
-É um teste que mede a força relativa da relação linear entre duas variáveis contínuas (X e Y). Importante ressaltar que a análise de correlação não assume que a variável X influencie a variável Y ou que exista uma relação de causa e efeito entre elas [@zar2010]. A análise é definida em termos da variância de X, a variância de Y, e a covariância de X e Y (i.e. como elas variam juntas).
+É um teste que mede a força relativa da relação linear entre duas variáveis contínuas (X e Y). Importante ressaltar que a análise de correlação não assume que a variável X influencie a variável Y ou que exista uma relação de causa e efeito entre elas [@zar_biostatistical_2010]. A análise é definida em termos da variância de X, a variância de Y, e a covariância de X e Y (i.e. como elas variam juntas).
 
 > $$ r = \frac{\sum{XY} - \frac{\sum{X} \sum{Y}}{n}}{\sqrt{\left(\sum{X^2} - \frac{\sum{X}^2}{n}\right)\left(\sum{Y^2} - \frac{\sum{Y}^2}{n}\right)}} $$
 
@@ -716,7 +716,7 @@ Neste exemplo, a precipitação não está associada com a variação no tamanho
 
 ## Análises de Variância (ANOVA)
 
-ANOVA refere-se a uma variedade de delineamentos experimentais nos quais a variável preditora é categórica e a variável resposta é contínua [@gotelli_ellison2013]. Exemplos desses delineamentos experimentais são: ANOVA de um fator, ANOVA de dois fatores, ANOVA em blocos aleatorizados, ANOVA de medidas repetidas e ANOVA *split-splot*. De forma geral, a ANOVA é um teste estatístico usado para comparar a média entre grupos amostrados independentemente. Para isso, o teste leva em conta, além das médias dos grupos, a variação dos dados dentro e entre os grupos. Neste capítulo, iremos demonstrar as linhas de comandos para alguns dos principais delineamentos experimentais.
+ANOVA refere-se a uma variedade de delineamentos experimentais nos quais a variável preditora é categórica e a variável resposta é contínua [@gotelli_primer_2012]. Exemplos desses delineamentos experimentais são: ANOVA de um fator, ANOVA de dois fatores, ANOVA em blocos aleatorizados, ANOVA de medidas repetidas e ANOVA *split-splot*. De forma geral, a ANOVA é um teste estatístico usado para comparar a média entre grupos amostrados independentemente. Para isso, o teste leva em conta, além das médias dos grupos, a variação dos dados dentro e entre os grupos. Neste capítulo, iremos demonstrar as linhas de comandos para alguns dos principais delineamentos experimentais.
 
 > #### Premissas da ANOVA:
 >
@@ -1031,7 +1031,7 @@ Percebam que as linhas se cruzam. Esse é um exemplo clássico de interação. N
 
 ## ANOVA em blocos aleatorizados
 
-No delineamento experimental com blocos aleatorizados, cada fator é agrupado em blocos, com réplicas de cada nível do fator representado em cada bloco [@gotelli_ellison2013]. O bloco é uma área ou período de tempo dentro do qual as condições ambientais são relativamente homogêneas. O objetivo do uso dos blocos é controlar fontes de variações indesejadas na variável dependente que não são de interesse do pesquisador. Desta maneira, podemos retirar dos resíduos os efeitos das variações indesejadas que não são do nosso interesse, e testar com maior poder estatístico os efeitos dos tratamentos de interesse. Importante, os blocos devem ser arranjados de forma que as condições ambientais sejam mais similares dentro dos blocos do que entre os blocos.
+No delineamento experimental com blocos aleatorizados, cada fator é agrupado em blocos, com réplicas de cada nível do fator representado em cada bloco [@gotelli_primer_2012]. O bloco é uma área ou período de tempo dentro do qual as condições ambientais são relativamente homogêneas. O objetivo do uso dos blocos é controlar fontes de variações indesejadas na variável dependente que não são de interesse do pesquisador. Desta maneira, podemos retirar dos resíduos os efeitos das variações indesejadas que não são do nosso interesse, e testar com maior poder estatístico os efeitos dos tratamentos de interesse. Importante, os blocos devem ser arranjados de forma que as condições ambientais sejam mais similares dentro dos blocos do que entre os blocos.
 
 <p>
 
@@ -1130,7 +1130,7 @@ Neste exemplo, rejeitamos a hipótese nula de que a distância das poças artifi
 
 ## Análise de covariância (ANCOVA)
 
-A ANCOVA pode ser compreendida como uma extensão da ANOVA com a adição de variável contínua (covariável) medida em todas as unidades amostrais [@gotelli_ellison2013]. A ideia é que a covariável também afete os valores da variável resposta. Não incluir a covariável irá fazer com que a variação não explicada pelo modelo concentre-se nos resíduos. Incluindo a covariável, o tamanho do resíduo é menor, e o teste para avaliar as diferenças nos tratamentos, que é o interesse do pesquisador, terá mais poder estatístico.
+A ANCOVA pode ser compreendida como uma extensão da ANOVA com a adição de variável contínua (covariável) medida em todas as unidades amostrais [@gotelli_primer_2012]. A ideia é que a covariável também afete os valores da variável resposta. Não incluir a covariável irá fazer com que a variação não explicada pelo modelo concentre-se nos resíduos. Incluindo a covariável, o tamanho do resíduo é menor, e o teste para avaliar as diferenças nos tratamentos, que é o interesse do pesquisador, terá mais poder estatístico.
 
 <p>
 
@@ -1226,4 +1226,4 @@ Neste exemplo, o tamanho da raiz (covariável) tem uma relação positiva com a 
 
 ### Para se aprofundar
 
--   Recomendamos aos interessados os livros: i) Zar [-@zar2010] Biostatiscal analysis; ii) Gotelli & Ellison [-@gotelli_ellison2013] A primer of ecological statistics; e iii) Quinn & Keough [-@quinn2002] Experimental design and data analysis for biologists.
+-   Recomendamos aos interessados os livros: i) Zar [-@zar_biostatistical_2010] Biostatiscal analysis; ii) Gotelli & Ellison [-@gotelli_primer_2012] A primer of ecological statistics; e iii) Quinn & Keough [-@quinn_experimental_2002] Experimental design and data analysis for biologists.
